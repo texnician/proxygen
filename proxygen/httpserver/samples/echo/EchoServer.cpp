@@ -13,7 +13,7 @@
 #include <proxygen/httpserver/HTTPServer.h>
 #include <proxygen/httpserver/RequestHandlerFactory.h>
 #include <unistd.h>
-
+#include <gflags/gflags.h>
 #include "EchoHandler.h"
 #include "EchoStats.h"
 

@@ -65,10 +65,10 @@ AX_BOOST_BASE([1.51.0], [], [AC_MSG_ERROR(
 AC_HEADER_STDC
 AC_CHECK_HEADERS([arpa/inet.h fcntl.h limits.h netdb.h stdint.h string.h sys/file.h sys/time.h syslog.h unistd.h malloc.h])
 
-AC_CHECK_LIB([event], [event_set], [], [AC_MSG_ERROR([Unable to find libevent])])
+AC_CHECK_LIB([event], [event_set], [], [AC_MSG_ERROR([Unable to find libevent])], `pkg-config --libs --static libevent`)
 AC_CHECK_LIB([cap], [cap_get_proc], [], [AC_MSG_ERROR([Unable to find libcap])])
-AC_CHECK_LIB([crypto], [MD5_Init], [], [AC_MSG_ERROR([Unable to find libcrypto])])
-AC_CHECK_LIB([ssl], [SSL_library_init], [], [AC_MSG_ERROR([Unable to find libssl])])
+AC_CHECK_LIB([crypto], [MD5_Init], [], [AC_MSG_ERROR([Unable to find libcrypto])], `pkg-config --libs --static libcrypto`)
+AC_CHECK_LIB([ssl], [SSL_library_init], [], [AC_MSG_ERROR([Unable to find libssl])], `pkg-config --libs --static libssl`)
 AC_CHECK_LIB([z], [gzread], [], [AC_MSG_ERROR([Unable to find zlib])])
 AC_CHECK_LIB([folly],[getenv],[],[AC_MSG_ERROR(
              [Please install the folly library from https://github.com/facebook/folly])])
